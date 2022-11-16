@@ -1,0 +1,1 @@
+kubectl expose deployment/plasma-donor --type=NodePort --port=5001 --name=plasma-donor-service --target-port=5001

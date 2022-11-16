@@ -1,0 +1,143 @@
+<html>
+    <head>
+      <meta charset="UTF-8">
+        <meta name="viewport" contents="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/css/dashboardstyle.css">
+        <title> Dashboard </title>
+        <title>Donor Details</title>
+       
+        <script
+      
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        src="jquery.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+        
+        </script>
+        <!-- <script> 
+        $(function(){
+        $("#header").load("dashboard.html"); 
+        });
+        </script> -->
+        
+         <link rel="stylesheet" href="/static/css/dummy.css">
+        <!-- <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,900" rel="stylesheet"> -->
+    </head>
+    <body>
+      <div class="navigation" id="navbar">
+        <nav class="nav">
+            <div>
+                <div class="nav-symbol">
+                    <!-- <ion-icon name="menu" class="nav_toggle" id="nav-toggle"></ion-icon> -->
+                    
+                    <strong href="#" class="nav_logo">Dashboard</strong>
+                </div>
+
+              
+              <div class="nav-list">
+                  
+                    <a href="/profile" class="nav_link">
+                        <ion-icon name="person-outline" class="nav_icon"></ion-icon>
+                        <span class="nav_name" >Profile</span>
+                        
+                    </a>
+                    <a href="/" class="nav_link">
+                        <ion-icon name="medical" class="nav_icon"></ion-icon>
+                        <span class="nav_name" >Donors list</span>
+                    </a>
+                  
+
+                </div>
+            </div>
+
+            <a href="/logout" class="nav_link">
+                <ion-icon name="log-out" class="nav_icon"></ion-icon>
+                <span class="nav_name">Logout</span>
+            </a>
+
+        </nav>
+    </div>
+
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
+    <script src="js/dashboardjs.js"></script>
+      <header id="header"></header>
+      <h1>Donors List</h1>
+      <center>
+          <form action="/" method="get">
+            <label style="text-align:center;font-size: 20px;">Get donar from other district:</label>
+            <input type="text" name="pincode" placeholder="Pincode" style="height: 30px;">
+            
+            <button type="submit" style="margin: 10px;" >Search</button>
+        </form>
+    </center>
+      <br/><br/><br/>
+      <div class="row">
+        <div class="column"><div class="card">
+            <h1 style="text-align: left">A+</h1>
+            <p style="font-weight: 200px;text-align: left;">Available donors: {{data.count.AP}}</p>
+            <button type="submit" onclick="window.location.href='/plasmarequest?group=AP'">Request</button>
+          </div>
+
+        </div>
+      
+        <div class="column">
+          <div class="card">
+            <h1 style="text-align: left">B+</h1>
+            <p style="font-weight: 200px;text-align: left;">Available donors: {{data.count.BP}}</p>
+            <button>Request</button>
+          </div>
+        </div>
+        
+        <div class="column">
+          <div class="card">
+            <h1 style="text-align: left">AB+</h1>
+            <p style="font-weight: 200px;text-align: left;">Available donors: {{data.count.ABP}}</p>
+            <button>Request</button>
+          </div>
+        </div>
+        
+        <div class="column">
+            <div class="card">
+              <h1 style="text-align: left">O+</h1>
+              <p style="font-weight: 200px;text-align: left;">Available donors: {{data.count.OP}}</p>
+              <button>Request</button>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <h1 style="text-align: left">A-</h1>
+              <p style="font-weight: 200px;text-align: left;">Available donors: {{data.count.AN}}</p>
+              <button>Request</button>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <h1 style="text-align: left">B-</h1>
+              <p style="font-weight: 200px;text-align: left;">Available donors: {{data.count.BN}}</p>
+              <button>Request</button>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <h1 style="text-align: left">AB-</h1>
+              <p style="font-weight: 200px;text-align: left;">Available donors: {{data.count.ABN}}</p>
+              <button>Request</button>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <h1 style="text-align: left">O-</h1>
+              <p style="font-weight: 200px;text-align: left;">Available donors: {{data.count.ON}}</p>
+              <button>Request</button>
+            </div>
+          </div>
+      </div>
+      
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    </body>
+</html>

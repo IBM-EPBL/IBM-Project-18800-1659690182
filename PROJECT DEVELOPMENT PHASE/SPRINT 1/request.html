@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Donor Details</title>
+
+         <link rel="stylesheet" href="/static/css/request.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,900" rel="stylesheet">
+    </head>
+    <body>
+      <header id="header"></header>
+      <h1>Request Form</h1>
+      <form method="post" action="/plasmarequest">
+        <div class="container">
+            
+            <div> 
+                <label> <b> Name </b></label>
+                <input type="text" id="name" name="name"> 
+            </div>
+
+            <div> 
+                <label> <b> Email </b></label>
+                <input type="text" id="email" name="email"> 
+            </div>
+            
+            <div>
+                <label> <b> Blood Group </b> </label>
+                <select id="bloodGroup" name="group" >
+                    <option value="{{blooddata.data.blood}}">{{blooddata.data.blood}}</option>
+                    <option value="AP">A+</option>
+                    <option value="AN">A-</option> 
+                    <option value="BP">B+</option>
+                    <option value="BN">B-</option> 
+                    <option value="ABP">AB+</option>
+                    <option value="ABN">AB-</option>
+                    <option value="OP">O+</option> 
+                    <option value="ON">O-</option> 
+                </select>
+            </div>
+
+            <div> 
+                <label> <b> Address </b></label>
+                <input type="text" id="address" name="address"> 
+            </div>
+
+            <div> 
+                <label> <b> Location </b></label>
+                <input type="text" id="location" name="location"> 
+            </div>
+
+            <div> 
+                <label> <b> Pincode </b></label>
+                <input type="phone" id="phone" name="pincode"> 
+            </div>
+            <div> 
+                <label> <b> Phone </b></label>
+                <input type="phone" id="phone" name="phone"> 
+            </div>
+           
+            <button class="submit" value="Save" > Send</button>
+        </div>
+    </form>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    </body>
+</html>

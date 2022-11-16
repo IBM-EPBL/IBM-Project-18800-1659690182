@@ -1,0 +1,40 @@
+# using SendGrid's Python Library
+# https://github.com/sendgrid/sendgrid-python
+import os
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
+
+# from_address we pass to our Mail object, edit with your name
+FROM_EMAIL = 'Your_Name@SendGridTest.com'
+
+
+app = Flask(__name__)
+app.secret_key = "paste your secret key"
+def sendMail(to_email,subject,content):
+    message = Mail(
+    from_email='1901053@smartinternz.com',
+    to_emails=to_email,
+    subject=subject,
+    html_content=content)
+    try:
+        response = sendGrid.send(message)
+        print(response.status_code)
+        # print(response.body)
+        # print(response.headers)
+    except Exception as e:
+        print(e.message)
+def getEmail(group,pincode,contact):
+    count_query = 'select email from userdata where bloodgroup = ? and pincode between ? and ?'
+    fetch_count = ibm_db.prepare(conn,count_query)
+    # print(group)
+    ibm_db.bind_param(fetch_count, 1,group)
+    ibm_db.bind_param(fetch_count, 2,int((int(pincode/1000))*1000))
+    ibm_db.bind_param(fetch_count, 3,int((int(pincode/1000))*1000)+1000)
+    ibm_db.execute(fetch_count)
+    email = ibm_db.fetch_assoc(fetch_count)
+    while email!= False:
+        mailBody = "plasma donation has been requested for bloodgroup "+group_abbreviation[group]+ "\ncontact\nName: "+ contact['name'] + "\ne-mail: "+contact['email']+ "\Phone Number: "+contact['phone']+ "\naddress: "+contact['address']+ "\naddress: "+str(pincode)
+        sendMail(email['EMAIL'],"Requesting for Plasma Donation",mailBody)
+        print(email)
+        email = ibm_db.fetch_assoc(fetch_count)
+    return email

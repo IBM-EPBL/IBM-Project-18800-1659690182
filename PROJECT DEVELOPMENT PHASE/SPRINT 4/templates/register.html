@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>registration</title>
+    <link rel="stylesheet" href="/static/css/register.css" />
+  </head>
+  <!-- <script
+      
+src="https://code.jquery.com/jquery-3.3.1.js"
+src="jquery.js"
+integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+crossorigin="anonymous">
+</script>
+<script> 
+$(function(){
+$("#header").load("dashboard_ori.html"); 
+});
+</script> -->
+  <body>
+    <div class="topnav" id="myTopnav">
+      <a href="/register">Register</a>
+      <a href="/login">Login</a>
+
+      <!-- <a href="about.html">About</a> -->
+    </div>
+    <!-- <header id="header"></header> -->
+    <!-- <h1 class="fact">Be the reason for someone's heartbeat</h1> -->
+    
+    <div class="login" style="text-align: center">
+      <h1 class="fact">Be the reason for someone's heartbeat</h1>
+      <br />
+      {{resp}}
+      <form class="login-page" method="post">
+        <h1>Register</h1>
+        <input type="text" placeholder="Name" name="name" /><br />
+        <br />
+        <label>Bloood Group</label>
+        <select name="group" id="blood">
+          <option value="AP">A+</option>
+          <option value="AN">A-</option>
+          <option value="BP">B+</option>
+          <option value="BN">B-</option>
+          <option value="ABN">AB-</option>
+          <option value="ABP">AB+</option>
+          <option value="OP">O+</option>
+          <option value="ON">O-</option>
+        </select>
+        <br />
+        <input type="text" placeholder="Pincode" name="pincode" /><br />
+        <input
+        type="date"
+         placeholder="Last donated"
+         name="lastdonated"
+       /><br />
+        <input type="text" placeholder="Email" name="email" /><br />
+        <input
+          type="text"
+          placeholder="password"
+          name="password"
+        /><br />
+        <input type="submit" class="submit" value="Register" />
+      </form>
+    </div>
+  </body>
+</html>
